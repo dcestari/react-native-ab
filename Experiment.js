@@ -14,11 +14,11 @@ var Experiment = React.createClass({
       if (!Array.isArray(children) || children.length < 2) {
         return new Error('You must have at least 2 Variants.');
       }
-      for (child of children) {
+      children.forEach((child) => {
         if (!child.type.prototype.isVariant) {
           return new Error('One or more children is not a Variant.');
         }
-      }
+      });
     }),
     choose: PropTypes.func,
     onChoice: PropTypes.func,
